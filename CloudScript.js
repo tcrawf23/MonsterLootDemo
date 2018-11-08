@@ -17,7 +17,8 @@ var RollTable = function ReadTableData(args, context) {
             ItemIds : [result.ResultItemId]
         });
 
-        // Handle Result
+        // Finally, return the resultId back to the client
+        return result.ResultItemId;
     } catch(error) {
         log.error(JSON.stringify(error));
     }
