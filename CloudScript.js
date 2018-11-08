@@ -9,11 +9,11 @@
 var RollTable = function ReadTableData(args, context) {
     try {
         // First, roll a random number and evaluate the drop table
-        var result = server.EvaluateRandomResultTable({ TableId : tableId });
+        var result = server.EvaluateRandomResultTable({ TableId : args.tableId });
 
         // Second, take the result and grant it to the player
         server.GrantItemsToUser({
-            PlayFabId : playerId,
+            PlayFabId : args.playerId,
             ItemIds : [result.ResultItemId]
         });
 
